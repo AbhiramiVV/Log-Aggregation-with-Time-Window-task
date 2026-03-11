@@ -1,0 +1,77 @@
+{
+  "info": {
+    "_postman_id": "568688f7-1930-4af0-897a-9fd8420c1e16",
+    "name": "Log Aggregation with Time Window",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "31741811",
+    "_collection_link": "https://go.postman.co/collection/31741811-568688f7-1930-4af0-897a-9fd8420c1e16?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "create /logs",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"userId\":\"1\",\r\n    \"timestamp\":\"17111111\"\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/logs",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "logs"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/active-users?minutes=10 -example",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"userId\":\"1\",\r\n    \"timestamp\":\"17111111\"\r\n\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/active-users?minutes=5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "active-users"
+          ],
+          "query": [
+            {
+              "key": "minutes",
+              "value": "5"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
